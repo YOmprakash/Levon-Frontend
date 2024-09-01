@@ -9,7 +9,7 @@ const TeacherList = () => {
   useEffect(() => {
     const fetchTeachers = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/teachers');
+        const response = await axios.get('https://levon-backend-6dx2.onrender.com/api/teachers');
         setTeachers(response.data);
        
       } catch (error) {

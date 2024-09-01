@@ -15,7 +15,7 @@ const StudentsPage = () => {
     try {
       await axios.post("https://levon-backend-6dx2.onrender.com/api/students", newStudent);
       setNewStudent({ name: "", grade: "" });
-      window.location.reload();
+      
       
     } catch (error) {
       console.error("Error creating student:", error);

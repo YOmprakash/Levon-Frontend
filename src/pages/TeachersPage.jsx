@@ -18,7 +18,7 @@ const TeachersPage = () => {
         name: "",
         subject: "",
       });
-      window.location.reload();
+      
       
       // by calling a method from the TeacherList component if needed
     } catch (error) {

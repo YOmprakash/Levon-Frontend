@@ -13,12 +13,12 @@ const TeachersPage = () => {
   const handleCreateTeacher = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/teachers", newTeacher);
+      await axios.post("https://levon-backend-6dx2.onrender.com/api/teachers", newTeacher);
       setNewTeacher({
         name: "",
         subject: "",
       });
-      window.location.reload();
+      
       // by calling a method from the TeacherList component if needed
     } catch (error) {
       console.error(error);

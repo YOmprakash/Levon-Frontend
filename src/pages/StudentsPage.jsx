@@ -1,10 +1,10 @@
 import { useState } from "react";
 import StudentList from "../components/StudentList";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 const StudentsPage = () => {
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate();
   const [newStudent, setNewStudent] = useState({
     name: "",
     grade: "",
@@ -13,9 +13,9 @@ const StudentsPage = () => {
   const handleCreateStudent = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/students", newStudent);
-      setNewStudent({ name: "", grade: "" }); // Clear form after submission
-      window.location.reload();
+      await axios.post("https://levon-backend-6dx2.onrender.com/api/students", newStudent);
+      setNewStudent({ name: "", grade: "" });
+      
     } catch (error) {
       console.error("Error creating student:", error);
     }
@@ -24,7 +24,7 @@ const StudentsPage = () => {
   return (
     <div className="p-8 bg-gray-100 min-h-screen">
       <button
-        onClick={() => navigate(-1)} // Navigate back to the previous page
+        onClick={() => navigate(-1)}
         className="mb-4 text-teal-600 hover:text-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-500"
       >
         &larr; Back
@@ -40,7 +40,6 @@ const StudentsPage = () => {
           Add New Student
         </h2>
         <div className="space-y-4">
-         
           <input
             type="text"
             placeholder="Name"
